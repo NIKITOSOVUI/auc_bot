@@ -32,7 +32,7 @@ def get_admin_keyboard():
         [InlineKeyboardButton(text="❌ Отменённые аукционы", callback_data="admin_canceled")]
     ])
 
-@router.message(Command("admin"), F.from_user.id == ADMIN_ID)
+@router.message(Command("admin"), F.from_user.id.in_(ADMIN_ID))
 async def cmd_admin(message: Message):
     active = len(get_all_auctions('active'))
     ended = len(get_all_auctions('ended'))

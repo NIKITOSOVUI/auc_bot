@@ -6,6 +6,7 @@ from database import init_db
 from handlers import routers
 from utils.auction_scheduler import start_scheduler
 
+
 bot = Bot(
     token=BOT_TOKEN,
     default=DefaultBotProperties(parse_mode=ParseMode.HTML)
